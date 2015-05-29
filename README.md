@@ -15,7 +15,8 @@ Featuring:
 
 特点:
 
-* 自动增量备份, 可以回到每个备份点.
+* 自动备份, 可以回到每个备份点.
+* 增量备份, 减小体积.
 
 requirement:
 
@@ -64,3 +65,27 @@ click [here](./backup_script.sh) for sample `backup_script.sh` file
     $ chmod 700 backup_script.sh
     $ git add backup_script.sh
     $ git commit -m "add backup script"
+
+
+STEP 4:
+
+test run the shell script
+
+    $ ./backup_script.sh
+
+STEP 5:
+
+add this to the cron job (this will backup on 3am each day):
+
+    0   3   *   *   *   sh ~/db_backup/backup_script.sh
+
+
+###to track change###
+
+the following command is useful
+
+    git blame db_backup_data.sql
+
+for more git usage, check out [my cheatshet](https://github.com/MrNiebieski/LinuxCommandsCompilation)
+
+click the [git section](https://github.com/MrNiebieski/LinuxCommandsCompilation/blob/master/git.md)
