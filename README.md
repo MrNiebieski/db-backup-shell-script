@@ -77,7 +77,7 @@ STEP 5:
 
 add this to the cron job (this will backup on 3am each day):
 
-    0   3   *   *   *   sh ~/db_backup/backup_script.sh
+    0   3   *   *   *   cd ~/db_backup && sh backup_script.sh
 
 
 ###to track change###
@@ -89,3 +89,10 @@ the following command is useful
 for more git usage, check out [my cheatshet](https://github.com/MrNiebieski/LinuxCommandsCompilation)
 
 click the [git section](https://github.com/MrNiebieski/LinuxCommandsCompilation/blob/master/git.md)
+
+
+###disclaimer###
+
+It is important to secure the safety of the server, this method provides basic protection agaist _database_ damage/attack by backing it up on the server.
+
+However, this cannot protect agianst damage/attack at the _server level_.
